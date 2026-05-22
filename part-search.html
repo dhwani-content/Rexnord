@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Catalog Search | Rexnord India</title>
+    <meta name="description" content="Search the Regal Rexnord catalog by part number across Bearings, Couplings, Motors, and Chains.">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <span class="auth-badge"><i class="fas fa-certificate"></i> Authorized Channel Partner India</span>
+                <div class="top-bar-contact">
+                    <a href="mailto:mail@rexnord.co.in"><i class="fas fa-envelope"></i> mail@rexnord.co.in</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Rexnord<span class="highlight"> in India.</span></span>
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="part-search.html" class="active">Part Search</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header" style="background: var(--white); padding: 40px 0 20px; border-bottom: none;">
+        <div class="container page-header-content">
+            <h1 style="color: var(--secondary-color); text-shadow: none; font-size: 2.5rem;">Interactive Catalog Search</h1>
+            <p class="breadcrumb" style="color: var(--text-secondary);"><a href="index.html" style="color: var(--primary-color);">Home</a> / Part Number Search</p>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="section part-search-section">
+        <div class="container">
+            
+            <div class="search-input-wrapper">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="partSearchInput" placeholder="Search by Part Number, Category, Type, or Name...">
+            </div>
+
+            <div class="filter-wrapper">
+                <!-- Future scope filters -->
+                <select class="form-control filter-select" disabled>
+                    <option value="">Filter by Category (Coming Soon)</option>
+                    <option value="Bearings">Bearings</option>
+                    <option value="Couplings">Couplings</option>
+                    <option value="Motors">Electric Motors</option>
+                    <option value="Chains">Chains</option>
+                </select>
+            </div>
+
+            <div class="table-responsive">
+                <table class="part-catalog-table" id="catalogTable">
+                    <thead>
+                        <tr>
+                            <th>Part Number</th>
+                            <th>Type</th>
+                            <th>Product Name</th>
+                            <th>Max Bore Size (mm)</th>
+                            <th>Max Torque (Nm)</th>
+                            <th>Dimensions (OD x L)</th>
+                            <th>Weight (kg)</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="catalogTableBody">
+                        <tr><td class="fw-bold text-primary">ABBR0010001</td><td>Barrel Coupling</td><td>BARFLEX</td><td>68</td><td>7,500</td><td>250 x 99</td><td>13</td><td><a href="parts/TCBR-0025_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010029</td><td>Barrel Coupling</td><td>BARFLEX</td><td>68</td><td>7,500</td><td>250 x 99</td><td>13</td><td><a href="parts/TCBR-0025_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010002</td><td>Barrel Coupling</td><td>BARFLEX</td><td>80</td><td>9,500</td><td>280 x 104</td><td>17</td><td><a href="parts/TCBR-0050_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010030</td><td>Barrel Coupling</td><td>BARFLEX</td><td>80</td><td>9,500</td><td>280 x 104</td><td>17</td><td><a href="parts/TCBR-0050_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010004</td><td>Barrel Coupling</td><td>BARFLEX</td><td>90</td><td>12,000</td><td>320 x 114</td><td>23</td><td><a href="parts/TCBR-0075_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010031</td><td>Barrel Coupling</td><td>BARFLEX</td><td>90</td><td>12,000</td><td>320 x 114</td><td>23</td><td><a href="parts/TCBR-0075_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010005</td><td>Barrel Coupling</td><td>BARFLEX</td><td>100</td><td>16,300</td><td>340 x 129</td><td>30</td><td><a href="parts/TCBR-0100_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010032</td><td>Barrel Coupling</td><td>BARFLEX</td><td>100</td><td>16,300</td><td>340 x 129</td><td>30</td><td><a href="parts/TCBR-0100_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010006</td><td>Barrel Coupling</td><td>BARFLEX</td><td>115</td><td>23,500</td><td>360 x 134</td><td>36</td><td><a href="parts/TCBR-0130_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010007</td><td>Barrel Coupling</td><td>BARFLEX</td><td>130</td><td>29,100</td><td>380 x 149</td><td>46</td><td><a href="parts/TCBR-0160_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010034</td><td>Barrel Coupling</td><td>BARFLEX</td><td>130</td><td>29,100</td><td>380 x 149</td><td>46</td><td><a href="parts/TCBR-0160_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010009</td><td>Barrel Coupling</td><td>BARFLEX</td><td>136</td><td>33,900</td><td>400 x 174</td><td>59</td><td><a href="parts/TCBR-0200_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010035</td><td>Barrel Coupling</td><td>BARFLEX</td><td>136</td><td>33,900</td><td>400 x 174</td><td>59</td><td><a href="parts/TCBR-0200_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010010</td><td>Barrel Coupling</td><td>BARFLEX</td><td>156</td><td>42,600</td><td>420 x 179</td><td>77</td><td><a href="parts/TCBR-0300_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010036</td><td>Barrel Coupling</td><td>BARFLEX</td><td>156</td><td>42,600</td><td>420 x 179</td><td>77</td><td><a href="parts/TCBR-0300_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010011</td><td>Barrel Coupling</td><td>BARFLEX</td><td>185</td><td>57,200</td><td>450 x 189</td><td>105</td><td><a href="parts/TCBR-0400_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010019</td><td>Barrel Coupling</td><td>BARFLEX</td><td>185</td><td>57,200</td><td>450 x 189</td><td>105</td><td><a href="parts/TCBR-0400_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010012</td><td>Barrel Coupling</td><td>BARFLEX</td><td>215</td><td>102,600</td><td>510 x 226</td><td>161</td><td><a href="parts/TCBR-0500_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010037</td><td>Barrel Coupling</td><td>BARFLEX</td><td>215</td><td>102,600</td><td>510 x 226</td><td>161</td><td><a href="parts/TCBR-0500_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010013</td><td>Barrel Coupling</td><td>BARFLEX</td><td>235</td><td>138,150</td><td>550 x 246</td><td>178</td><td><a href="parts/TCBR-0600_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010038</td><td>Barrel Coupling</td><td>BARFLEX</td><td>235</td><td>138,150</td><td>550 x 246</td><td>178</td><td><a href="parts/TCBR-0600_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010014</td><td>Barrel Coupling</td><td>BARFLEX</td><td>250</td><td>185,300</td><td>580 x 266</td><td>215</td><td><a href="parts/TCBR-1000_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010039</td><td>Barrel Coupling</td><td>BARFLEX</td><td>250</td><td>185,300</td><td>580 x 266</td><td>215</td><td><a href="parts/TCBR-1000_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010115</td><td>Barrel Coupling</td><td>BARFLEX</td><td>295</td><td>250,700</td><td>650 x 325</td><td>336</td><td><a href="parts/TCBR-1500_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010121</td><td>Barrel Coupling</td><td>BARFLEX</td><td>295</td><td>250,700</td><td>650 x 325</td><td>336</td><td><a href="parts/TCBR-1500_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010116</td><td>Barrel Coupling</td><td>BARFLEX</td><td>305</td><td>381,500</td><td>665 x 340</td><td>363</td><td><a href="parts/TCBR-2100_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010122</td><td>Barrel Coupling</td><td>BARFLEX</td><td>305</td><td>381,500</td><td>665 x 340</td><td>363</td><td><a href="parts/TCBR-2100_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010117</td><td>Barrel Coupling</td><td>BARFLEX</td><td>315</td><td>442,800</td><td>680 x 360</td><td>396</td><td><a href="parts/TCBR-2600_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010123</td><td>Barrel Coupling</td><td>BARFLEX</td><td>315</td><td>442,800</td><td>680 x 360</td><td>396</td><td><a href="parts/TCBR-2600_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010118</td><td>Barrel Coupling</td><td>BARFLEX</td><td>340</td><td>532,500</td><td>710 x 390</td><td>449</td><td><a href="parts/TCBR-3400_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010124</td><td>Barrel Coupling</td><td>BARFLEX</td><td>340</td><td>532,500</td><td>710 x 390</td><td>449</td><td><a href="parts/TCBR-3400_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010119</td><td>Barrel Coupling</td><td>BARFLEX</td><td>385</td><td>665,650</td><td>780 x 422</td><td>638</td><td><a href="parts/TCBR-4200_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010125</td><td>Barrel Coupling</td><td>BARFLEX</td><td>385</td><td>665,650</td><td>780 x 422</td><td>638</td><td><a href="parts/TCBR-4200_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010120</td><td>Barrel Coupling</td><td>BARFLEX</td><td>430</td><td>816,200</td><td>850 x 462</td><td>787</td><td><a href="parts/TCBR-6200_A00.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010126</td><td>Barrel Coupling</td><td>BARFLEX</td><td>430</td><td>816,200</td><td>850 x 462</td><td>787</td><td><a href="parts/TCBR-6200_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">ABBR0010046</td><td>Barrel Coupling</td><td>BARFLEX</td><td>455</td><td>900,000</td><td>940 x 541</td><td>-</td><td><a href="parts/TCBR-8200_B01.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">1120037</td><td>Chain Coupling</td><td>Browning</td><td>-</td><td>-</td><td>-</td><td>1.59</td><td><a href="parts/CHCFR6P.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061530</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.27</td><td><a href="parts/C40_16.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061535</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.78</td><td><a href="parts/C50_18.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061542</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>1.51</td><td><a href="parts/C60_24.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061544</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>1.65</td><td><a href="parts/C60_30.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061548</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>2.78</td><td><a href="parts/C80_20.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061553</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>4.52</td><td><a href="parts/C100_18.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061532</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.32</td><td><a href="parts/C40_20.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061533</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.41</td><td><a href="parts/C40_26.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061534</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.53</td><td><a href="parts/C50_16.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061540</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.99</td><td><a href="parts/C60_18.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">061541</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>2.31</td><td><a href="parts/C80_18.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116493</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.17</td><td><a href="parts/N4_CPLG_CHAIN-10_FT.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116494</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.18</td><td><a href="parts/N4_CPLG_CHAIN-50_FT.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116191</td><td>Chain Coupling</td><td>Morse</td><td>19.05</td><td>-</td><td>52.3 x 51.6</td><td>0.07</td><td><a href="parts/N410_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116192</td><td>Chain Coupling</td><td>Morse</td><td>22.23</td><td>-</td><td>56.4 x 51.6</td><td>0.08</td><td><a href="parts/N411_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116193</td><td>Chain Coupling</td><td>Morse</td><td>25.40</td><td>-</td><td>60.2 x 51.6</td><td>0.09</td><td><a href="parts/N412_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116194</td><td>Chain Coupling</td><td>Morse</td><td>26.99</td><td>-</td><td>64.3 x 51.6</td><td>0.29</td><td><a href="parts/N413_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116195</td><td>Chain Coupling</td><td>Morse</td><td>28.58</td><td>-</td><td>68.3 x 51.6</td><td>0.10</td><td><a href="parts/N414_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116196</td><td>Chain Coupling</td><td>Morse</td><td>31.75</td><td>-</td><td>72.4 x 51.6</td><td>0.11</td><td><a href="parts/N415_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116198</td><td>Chain Coupling</td><td>Morse</td><td>36.51</td><td>-</td><td>80.3 x 51.6</td><td>0.12</td><td><a href="parts/N417_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116199</td><td>Chain Coupling</td><td>Morse</td><td>38.10</td><td>-</td><td>84.3 x 51.6</td><td>0.13</td><td><a href="parts/N418_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116201</td><td>Chain Coupling</td><td>Morse</td><td>47.63</td><td>-</td><td>92.5 x 54.9</td><td>0.15</td><td><a href="parts/N420_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116202</td><td>Chain Coupling</td><td>Morse</td><td>47.63</td><td>-</td><td>96.5 x 54.9</td><td>0.15</td><td><a href="parts/N421_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116204</td><td>Chain Coupling</td><td>Morse</td><td>50.80</td><td>-</td><td>104.4 x 54.9</td><td>0.36</td><td><a href="parts/N423_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">116205</td><td>Chain Coupling</td><td>Morse</td><td>57.15</td><td>-</td><td>108.5 x 54.9</td><td>0.17</td><td><a href="parts/N424_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">174516</td><td>Chain Coupling</td><td>Morse</td><td>-</td><td>-</td><td>-</td><td>0.34</td><td><a href="parts/N6_CPLG_CHAIN-10_FT.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630811</td><td>Chain Coupling</td><td>Morse</td><td>33.34</td><td>-</td><td>88.4 x 69.9</td><td>0.22</td><td><a href="parts/N611_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630812</td><td>Chain Coupling</td><td>Morse</td><td>34.93</td><td>-</td><td>94.5 x 69.9</td><td>0.24</td><td><a href="parts/N612_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630814</td><td>Chain Coupling</td><td>Morse</td><td>44.45</td><td>-</td><td>106.4 x 69.9</td><td>0.27</td><td><a href="parts/N614_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630815</td><td>Chain Coupling</td><td>Morse</td><td>47.63</td><td>-</td><td>112.5 x 69.9</td><td>0.30</td><td><a href="parts/N615_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630816</td><td>Chain Coupling</td><td>Morse</td><td>50.80</td><td>-</td><td>118.6 x 69.9</td><td>0.32</td><td><a href="parts/N616_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630817</td><td>Chain Coupling</td><td>Morse</td><td>57.15</td><td>-</td><td>124.5 x 69.9</td><td>0.33</td><td><a href="parts/N617_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630818</td><td>Chain Coupling</td><td>Morse</td><td>60.33</td><td>-</td><td>130.6 x 69.9</td><td>0.35</td><td><a href="parts/N618_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630820</td><td>Chain Coupling</td><td>Morse</td><td>66.68</td><td>-</td><td>142.7 x 69.9</td><td>0.39</td><td><a href="parts/N620_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">630824</td><td>Chain Coupling</td><td>Morse</td><td>66.68</td><td>-</td><td>166.9 x 69.9</td><td>0.41</td><td><a href="parts/N624_COUPLING_CH.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">153 KD 1 SS</td><td>Disc Coupling</td><td>Kop-Flex KD1</td><td>-</td><td>890</td><td>139.7 x 230.1</td><td>11.80</td><td><a href="parts/153_KD_1_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">203 KD 1 SS</td><td>Disc Coupling</td><td>Kop-Flex KD1</td><td>-</td><td>1,627</td><td>165.1 x 261.9</td><td>19.22</td><td><a href="parts/203_KD_1_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">253 KD 1 SS</td><td>Disc Coupling</td><td>Kop-Flex KD1</td><td>-</td><td>2,666</td><td>196.9 x 298.5</td><td>30.71</td><td><a href="parts/253_KD_1_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 10 SS FB</td><td>Disc Coupling</td><td>Kop-Flex KD10</td><td>-</td><td>452</td><td>100.1 x 125.5</td><td>6.99</td><td><a href="parts/103_KD_10_SS_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">254 KD 10 SS FB</td><td>Disc Coupling</td><td>Kop-Flex KD10</td><td>-</td><td>5,875</td><td>193.5 x 221.5</td><td>24.68</td><td><a href="parts/254_KD_10_SS_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">354 KD 10 SS</td><td>Disc Coupling</td><td>Kop-Flex KD10</td><td>-</td><td>16,383</td><td>266.7 x 319.3</td><td>72.15</td><td><a href="parts/354_KD_10_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">404 KD 10 SS</td><td>Disc Coupling</td><td>Kop-Flex KD10</td><td>-</td><td>24,291</td><td>298.5 x 376.2</td><td>117.80</td><td><a href="parts/404_KD_10_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">454 KD 10 SS</td><td>Disc Coupling</td><td>Kop-Flex KD10</td><td>-</td><td>28,811</td><td>323.9 x 389.1</td><td>132.10</td><td><a href="parts/454_KD_10_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">304 KD 11 SS</td><td>Disc Coupling</td><td>Kop-Flex KD11</td><td>-</td><td>10,056</td><td>269.7 x 213.6</td><td>40.59</td><td><a href="parts/304_KD_11_SS.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">454 KD 11 SS FB</td><td>Disc Coupling</td><td>Kop-Flex KD11</td><td>-</td><td>28,811</td><td>395.2 x 316.0</td><td>117.75</td><td><a href="parts/454_KD_11_SS_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 2 LS500 FB</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>306</td><td>109.5 x 228.6</td><td>6.48</td><td><a href="parts/103_KD_2_LS500_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 2 SS500</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>306</td><td>109.5 x 203.2</td><td>5.65</td><td><a href="parts/103_KD_2_SS500.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 2 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>306</td><td>109.5 x 254.0</td><td>6.14</td><td><a href="parts/103_KD_2_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">153 KD 2 SS700 FB</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>890</td><td>144.5 x 279.4</td><td>13.28</td><td><a href="parts/153_KD_2_SS700_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">153 KD 2 SS438</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>890</td><td>144.5 x 212.7</td><td>13.81</td><td><a href="parts/153_KD_2_SS438.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">153 KD 2 SS500</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>890</td><td>144.5 x 228.6</td><td>14.03</td><td><a href="parts/153_KD_2_SS500.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">153 KD 2 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>890</td><td>144.5 x 279.4</td><td>14.53</td><td><a href="parts/153_KD_2_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">203 KD 2 JS500</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>1,627</td><td>171.5 x 276.1</td><td>29.59</td><td><a href="parts/203_KD_2_JS500.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">203 KD 2 JS700</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>1,627</td><td>171.5 x 326.9</td><td>30.12</td><td><a href="parts/203_KD_2_JS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">253 KD 2 LS700</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>2,666</td><td>203.2 x 358.9</td><td>40.27</td><td><a href="parts/253_KD_2_LS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">303 KD 2 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD2</td><td>-</td><td>4,271</td><td>235.0 x 349.5</td><td>56.00</td><td><a href="parts/303_KD_2_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">204 KD 20 JL700 FB</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>4,067</td><td>168.1 x 361.7</td><td>34.87</td><td><a href="parts/204_KD_20_JL700_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">204 KD 20 SS700 FB</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>4,067</td><td>168.1 x 292.1</td><td>21.94</td><td><a href="parts/204_KD_20_SS700_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">204 KD 20 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>4,067</td><td>168.1 x 292.1</td><td>23.75</td><td><a href="parts/204_KD_20_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">204 KD 20 SS900</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>4,067</td><td>168.1 x 342.9</td><td>24.27</td><td><a href="parts/204_KD_20_SS900.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">254 KD 20 LL1000 FB</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>5,875</td><td>200.2 x 469.9</td><td>13.15</td><td><a href="parts/254_KD_20_LL1000_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">254 KD 20 JS700</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>5,875</td><td>200.2 x 358.9</td><td>51.22</td><td><a href="parts/254_KD_20_JS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">254 KD 20 LL700</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>5,875</td><td>200.2 x 393.7</td><td>46.97</td><td><a href="parts/254_KD_20_LL700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">254 KD 20 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>5,875</td><td>200.2 x 324.1</td><td>37.93</td><td><a href="parts/254_KD_20_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">304 KD 20 SS900 FB</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>10,056</td><td>235.0 x 400.3</td><td>62.65</td><td><a href="parts/304_KD_20_SS900_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">304 KD 20 LS800</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>10,056</td><td>235.0 x 409.7</td><td>68.31</td><td><a href="parts/304_KD_20_LS800.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">304 KD 20 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>10,056</td><td>235.0 x 349.5</td><td>61.54</td><td><a href="parts/304_KD_20_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">354 KD 20 SS1000</td><td>Disc Coupling</td><td>Kop-Flex KD20</td><td>-</td><td>16,948</td><td>273.1 x 457.2</td><td>99.15</td><td><a href="parts/354_KD_20_SS1000.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 21 LS350 FB</td><td>Disc Coupling</td><td>Kop-Flex KD21</td><td>-</td><td>452</td><td>100.1 x 180.3</td><td>5.21</td><td><a href="parts/103_KD_21_LS350_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD21 SS500 FB</td><td>Disc Coupling</td><td>Kop-Flex KD21</td><td>-</td><td>452</td><td>100.1 x 211.3</td><td>4.34</td><td><a href="parts/103_KD_21_SS500_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 21 SS350</td><td>Disc Coupling</td><td>Kop-Flex KD21</td><td>-</td><td>452</td><td>100.1 x 173.2</td><td>5.07</td><td><a href="parts/103_KD_21_SS350.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">204 KD 21 LL700</td><td>Disc Coupling</td><td>Kop-Flex KD21</td><td>-</td><td>4,067</td><td>162.1 x 331.7</td><td>20.46</td><td><a href="parts/204_KD_21_LL700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">304 KD 21 SS700</td><td>Disc Coupling</td><td>Kop-Flex KD21</td><td>-</td><td>10,056</td><td>228.6 x 358.6</td><td>45.29</td><td><a href="parts/304_KD_21_SS700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">103 KD 4 SS FB</td><td>Disc Coupling</td><td>Kop-Flex KD4</td><td>-</td><td>452</td><td>100.1 x 92.2</td><td>3.41</td><td><a href="parts/103_KD_4_SS_FB.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">017233</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>34</td><td>-</td><td>0.27</td><td><a href="parts/017233.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">577813</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>66.6</td><td>5,966</td><td>352.4 x 244.3</td><td>0.56</td><td><a href="parts/10109259.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">607060</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.3</td><td>144,765</td><td>733.4 x 666.5</td><td>535.24</td><td><a href="parts/10124927.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">607428</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>91,945</td><td>733.4 x 571.2</td><td>362.87</td><td><a href="parts/10125281.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">608931</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>72,867</td><td>733.4 x 527.1</td><td>276.69</td><td><a href="parts/10126700.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">609973</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>95.2</td><td>9,942</td><td>466.7 x 289.0</td><td>45.81</td><td><a href="parts/10127616.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">612937</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>91,945</td><td>733.4 x 571.2</td><td>362.87</td><td><a href="parts/10130410.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">613798</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>101,539</td><td>733.4 x 609.6</td><td>442.25</td><td><a href="parts/10131227.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10192301</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.4</td><td>144,765</td><td>733.4 x 666.5</td><td>535.24</td><td><a href="parts/10192301.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10194481</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>8</td><td>-</td><td>0.11</td><td><a href="parts/10194481.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10285915</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>0.53</td><td>-</td><td>0.23</td><td><a href="parts/10285915.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10289221</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.4</td><td>144,765</td><td>733.4 x 666.5</td><td>535.24</td><td><a href="parts/10289221.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10292854</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>34</td><td>-</td><td>0.45</td><td><a href="parts/10292854.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10352623</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.1</td><td>144,765</td><td>733.4 x 666.5</td><td>535.24</td><td><a href="parts/10352623.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10355560</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>8</td><td>-</td><td>0.11</td><td><a href="parts/10355560.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10392759</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>72,867</td><td>733.4 x 527.1</td><td>276.69</td><td><a href="parts/10392759.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10394874</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>91,945</td><td>733.4 x 571.2</td><td>362.87</td><td><a href="parts/10394874.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10395229</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>126.9</td><td>22,682</td><td>673.1 x 349.3</td><td>80.74</td><td><a href="parts/10395229.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10401121</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.1</td><td>144,765</td><td>733.4 x 666.5</td><td>0.56</td><td><a href="parts/10401121.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10402565</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.4</td><td>144,765</td><td>733.4 x 666.5</td><td>0.56</td><td><a href="parts/10402565.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10446536</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>149.1</td><td>51,578</td><td>733.4 x 494.8</td><td>218.18</td><td><a href="parts/10446536.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10522950</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>91,945</td><td>733.4 x 571.2</td><td>362.87</td><td><a href="parts/10522950.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10526849</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>91,945</td><td>733.4 x 571.2</td><td>362.87</td><td><a href="parts/10526849.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10603270</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>215.7</td><td>144,765</td><td>733.4 x 666.5</td><td>0.56</td><td><a href="parts/10603270.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10609376</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>718.2 x 666.5</td><td>631.94</td><td><a href="parts/10609376.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10665858</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>733.4 x 666.5</td><td>0.56</td><td><a href="parts/10665858.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10669075</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>69.8</td><td>8,976</td><td>571.5 x 269.7</td><td>54.45</td><td><a href="parts/10669075.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10705483</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>215.7</td><td>144,765</td><td>718.2 x 666.5</td><td>624.51</td><td><a href="parts/10705483.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10707520</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.4</td><td>144,765</td><td>733.4 x 666.5</td><td>625.41</td><td><a href="parts/10707520.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10707555</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>733.4 x 666.5</td><td>624.51</td><td><a href="parts/10707555.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10707578</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>126.9</td><td>72,867</td><td>733.4 x 527.1</td><td>359.43</td><td><a href="parts/10707578.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10713340</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>126.9</td><td>51,578</td><td>673.1 x 494.8</td><td>280.38</td><td><a href="parts/10713340.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10725140</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>733.4 x 666.5</td><td>631.94</td><td><a href="parts/10725140.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10728494</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.1</td><td>144,765</td><td>733.4 x 666.5</td><td>631.94</td><td><a href="parts/10728494.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10730232</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>152.3</td><td>51,578</td><td>733.4 x 494.8</td><td>284.61</td><td><a href="parts/10730232.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10737133</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>126.9</td><td>51,578</td><td>673.1 x 494.8</td><td>280.38</td><td><a href="parts/10737133.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10756732</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.3</td><td>144,765</td><td>733.4 x 666.5</td><td>639.50</td><td><a href="parts/10756732.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10777727</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>733.4 x 666.5</td><td>602.87</td><td><a href="parts/10777727.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10781592</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>165.0</td><td>72,867</td><td>733.4 x 527.1</td><td>276.69</td><td><a href="parts/10781592.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10837446</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>190.3</td><td>144,765</td><td>733.4 x 666.5</td><td>609.86</td><td><a href="parts/10837446.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10845811</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>126.9</td><td>51,578</td><td>673.1 x 494.8</td><td>277.01</td><td><a href="parts/10845811.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10851114</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>203.0</td><td>144,765</td><td>733.4 x 666.5</td><td>603.14</td><td><a href="parts/10851114.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">10852349</td><td>Disc Coupling</td><td>Rexnord Thomas CMR</td><td>171.4</td><td>91,945</td><td>733.4 x 571.2</td><td>415.85</td><td><a href="parts/10852349.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">12CC040040</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>0.12</td><td>-</td><td>0.45</td><td><a href="parts/10013995.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">25CA080120</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>0.53</td><td>-</td><td>0.45</td><td><a href="parts/10014176.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">37CB080120</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>2.15</td><td>-</td><td>0.45</td><td><a href="parts/10014560.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">37CB120140</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>2.15</td><td>-</td><td>0.45</td><td><a href="parts/10014570.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">37CC080120</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>2.15</td><td>-</td><td>0.45</td><td><a href="parts/10014679.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">37CC100120</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>2.15</td><td>-</td><td>0.45</td><td><a href="parts/10014683.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">37CS120120</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>2.15</td><td>-</td><td>0.45</td><td><a href="parts/10014705.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">50CB080080</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>8.47</td><td>-</td><td>0.45</td><td><a href="parts/10014902.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">50CB100200</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>8.47</td><td>-</td><td>0.45</td><td><a href="parts/10014923.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">50CC120164</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>8.47</td><td>-</td><td>0.45</td><td><a href="parts/10015078.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">62CA200200</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>33.90</td><td>-</td><td>0.45</td><td><a href="parts/10015699.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">62CA200240</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>33.90</td><td>-</td><td>0.45</td><td><a href="parts/10015701.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">62CB206206</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>33.90</td><td>-</td><td>0.45</td><td><a href="parts/10015768.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">6790167</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>0.12</td><td>-</td><td>0.05</td><td><a href="parts/10138464.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">75CB246246</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>45.20</td><td>-</td><td>0.45</td><td><a href="parts/10016352.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">75CC206246</td><td>Disc Coupling</td><td>Rexnord Thomas Miniature</td><td>-</td><td>45.20</td><td>-</td><td>0.56</td><td><a href="parts/10016437.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">DG00328</td><td>Disc Coupling</td><td>Rexnord Thomas Spacer Couplings</td><td>-</td><td>-</td><td>-</td><td>43.00</td><td><a href="parts/10172347.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">G1AMR225</td><td>Disc Coupling</td><td>Rexnord Thomas AMR</td><td>-</td><td>-</td><td>-</td><td>10.80</td><td><a href="parts/10177081.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                        <tr><td class="fw-bold text-primary">G3ASR71175</td><td>Disc Coupling</td><td>Rexnord Thomas Spacer Couplings</td><td>-</td><td>-</td><td>-</td><td>5.62</td><td><a href="parts/10177105.html" class="btn btn-outline btn-sm">View Catalog</a></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Empty State (hidden by default) -->
+            <div id="noResultsMessage" class="text-center" style="display: none; padding: 40px; background: var(--white); border-radius: 8px; border: 1px solid var(--border-color); margin-top: 20px;">
+                <i class="fas fa-search" style="font-size: 3rem; color: #ddd; margin-bottom: 15px;"></i>
+                <h3>No results found</h3>
+                <p class="text-secondary">Try adjusting your search terms.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PDF Viewer Modal Component -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3 id="pdfModalTitle">Catalog Viewer</h3>
+                <span class="close-modal close-pdf-modal">&times;</span>
+            </div>
+            <div class="pdf-container">
+                <iframe id="pdfIframe" src="" title="PDF Viewer"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col brand-col">
+                    <span class="logo-text">Rexnord<span class="highlight"> in India.</span></span>
+                    <p class="mt-2">Authorized distributor of Regal Rexnord products in India, providing premium power transmission solutions for industrial applications.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="part-search.html">Part Search</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:mail@rexnord.co.in">mail@rexnord.co.in</a></li>
+                        <li><i class="fas fa-location-dot"></i> <a href="https://maps.google.com/?q=Jinharsh+Industrial+Solutions+76/78+Nagdevi+Street+Masid+Bunder+Mumbai+400003" target="_blank" rel="noopener noreferrer">India</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 1993 Rexnord India Channel Partner. All rights reserved. <br><small>Note: This is the website of an authorized distributor - Jinharsh Industrial Solutions. "Rexnord" and related trademarks are the property of Regal Rexnord Corporation.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

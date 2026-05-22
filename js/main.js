@@ -75,35 +75,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // PDF Modal Logic for Couplings Page
+    // PDF Modal Logic for Couplings/Bearings Page
     const pdfModal = document.getElementById('pdfModal');
     const pdfIframe = document.getElementById('pdfIframe');
-    const closeModalElements = document.querySelectorAll('.close-modal');
-    const viewCatalogBtns = document.querySelectorAll('.view-catalog-btn');
 
-    if (pdfModal && pdfIframe && viewCatalogBtns.length > 0) {
-        viewCatalogBtns.forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pdfSrc = this.getAttribute('data-pdf-src');
-                if (pdfSrc) {
-                    pdfIframe.src = pdfSrc;
-                    pdfModal.classList.add('show');
-                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
-                }
-            });
-        });
-
+    if (pdfModal) {
         const closeModal = () => {
             pdfModal.classList.remove('show');
-            setTimeout(() => {
-                pdfIframe.src = ''; // Clear iframe after small delay for smooth transition
-            }, 300);
+            if (pdfIframe) {
+                setTimeout(() => {
+                    pdfIframe.src = ''; // Clear iframe after small delay for smooth transition
+                }, 300);
+            }
             document.body.style.overflow = ''; // Restore scrolling
         };
 
-        // Close on X click
-        closeModalElements.forEach(el => {
+        // Target close buttons specifically within pdfModal
+        const pdfCloseBtns = pdfModal.querySelectorAll('.close-modal');
+        pdfCloseBtns.forEach(el => {
             el.addEventListener('click', closeModal);
         });
 
@@ -120,22 +109,61 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeModal();
             }
         });
+
+        // Handle direct single catalog buttons (if any still exist)
+        const viewCatalogBtns = document.querySelectorAll('.view-catalog-btn');
+        viewCatalogBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pdfSrc = this.getAttribute('data-pdf-src');
+                if (pdfSrc && pdfIframe) {
+                    pdfIframe.src = pdfSrc;
+                    pdfModal.classList.add('show');
+                    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                }
+            });
+        });
     }
 
     // Catalog Multi-Selector Modal Logic
     const selectorModal = document.getElementById('selectorModal');
     const selectorModalBody = document.getElementById('selectorModalBody');
-    const multiCatalogBtns = document.querySelectorAll('.view-multi-catalog-btn');
     const selectorModalTitle = document.getElementById('selectorModalTitle');
 
-    if (selectorModal && multiCatalogBtns.length > 0) {
+    if (selectorModal) {
+        const closeSelector = () => {
+            selectorModal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore scrolling
+        };
+
+        // Target close buttons specifically within selectorModal
+        const selectorCloseBtns = selectorModal.querySelectorAll('.close-modal');
+        selectorCloseBtns.forEach(el => {
+            el.addEventListener('click', closeSelector);
+        });
+
+        // Close on outside click
+        window.addEventListener('click', (e) => {
+            if (e.target === selectorModal) {
+                closeSelector();
+            }
+        });
+
+        // Close on Esc key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && selectorModal.classList.contains('show')) {
+                closeSelector();
+            }
+        });
+
+        const multiCatalogBtns = document.querySelectorAll('.view-multi-catalog-btn');
         multiCatalogBtns.forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const brand = this.getAttribute('data-brand') || "Available";
                 const catalogsStr = this.getAttribute('data-catalogs');
                 
-                if (catalogsStr) {
+                if (catalogsStr && selectorModalBody) {
                     try {
                         const catalogs = JSON.parse(catalogsStr);
                         if (selectorModalTitle) selectorModalTitle.textContent = `${brand} Catalogs`;
@@ -155,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     pdfIframe.src = cat.src;
                                     setTimeout(() => {
                                         pdfModal.classList.add('show');
+                                        document.body.style.overflow = 'hidden'; // Keep background locked
                                     }, 100);
                                 }
                             };
@@ -162,33 +191,43 @@ document.addEventListener('DOMContentLoaded', () => {
                         });
                         
                         selectorModal.classList.add('show');
-                        document.body.style.overflow = 'hidden';
+                        document.body.style.overflow = 'hidden'; // Lock background
                     } catch (err) {
                         console.error('Error parsing catalogs:', err);
                     }
                 }
             });
         });
+    }
 
-        const closeSelector = () => {
-            selectorModal.classList.remove('show');
-            document.body.style.overflow = '';
-        };
+    // Part Number Search Logic
+    const searchInput = document.getElementById('partSearchInput');
+    const tableBody = document.getElementById('catalogTableBody');
+    const noResultsMessage = document.getElementById('noResultsMessage');
 
-        const closeSelectorBtns = document.querySelectorAll('.close-selector-modal');
-        closeSelectorBtns.forEach(el => {
-            el.addEventListener('click', closeSelector);
-        });
+    if (searchInput && tableBody) {
+        searchInput.addEventListener('keyup', function() {
+            const filter = this.value.toLowerCase();
+            const rows = tableBody.getElementsByTagName('tr');
+            let visibleCount = 0;
 
-        window.addEventListener('click', (e) => {
-            if (e.target === selectorModal) {
-                closeSelector();
+            for (let i = 0; i < rows.length; i++) {
+                const textContent = rows[i].textContent || rows[i].innerText;
+                if (textContent.toLowerCase().indexOf(filter) > -1) {
+                    rows[i].style.display = '';
+                    visibleCount++;
+                } else {
+                    rows[i].style.display = 'none';
+                }
             }
-        });
 
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && selectorModal.classList.contains('show')) {
-                closeSelector();
+            // Show 'No Results' if nothing matches
+            if (visibleCount === 0) {
+                noResultsMessage.style.display = 'block';
+                tableBody.parentElement.style.display = 'none'; // hide table header
+            } else {
+                noResultsMessage.style.display = 'none';
+                tableBody.parentElement.style.display = 'table';
             }
         });
     }
