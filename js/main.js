@@ -206,8 +206,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const noResultsMessage = document.getElementById('noResultsMessage');
 
     if (searchInput && tableBody) {
-        searchInput.addEventListener('keyup', function() {
-            const filter = this.value.toLowerCase();
+        const filterTable = (query) => {
+            const filter = query.toLowerCase();
             const rows = tableBody.getElementsByTagName('tr');
             let visibleCount = 0;
 
@@ -229,6 +229,37 @@ document.addEventListener('DOMContentLoaded', () => {
                 noResultsMessage.style.display = 'none';
                 tableBody.parentElement.style.display = 'table';
             }
+        };
+
+        searchInput.addEventListener('keyup', function() {
+            filterTable(this.value);
         });
+
+        // Save scroll position and search query when clicking a view catalog link
+        tableBody.addEventListener('click', (e) => {
+            const link = e.target.closest('a');
+            if (link && link.getAttribute('href') && link.getAttribute('href').indexOf('parts/') > -1) {
+                sessionStorage.setItem('partSearchScroll', window.scrollY);
+                sessionStorage.setItem('partSearchQuery', searchInput.value);
+            }
+        });
+
+        // Restore scroll position and search query on load
+        const savedQuery = sessionStorage.getItem('partSearchQuery');
+        const savedScroll = sessionStorage.getItem('partSearchScroll');
+
+        if (savedQuery !== null) {
+            searchInput.value = savedQuery;
+            filterTable(savedQuery);
+            sessionStorage.removeItem('partSearchQuery');
+        }
+
+        if (savedScroll !== null) {
+            // Restore scroll position after DOM layout/paint finishes
+            setTimeout(() => {
+                window.scrollTo(0, parseInt(savedScroll, 10));
+            }, 100);
+            sessionStorage.removeItem('partSearchScroll');
+        }
     }
 });
